@@ -1,6 +1,5 @@
 const passport = require('passport');
-//attempt to authenticate with google using GoogleStrategy
-//access profile and email
+
 module.exports = app => {
   app.get(
     '/auth/google',

@@ -1,3 +1,4 @@
+// SurveyNew shows SurveyForm and SurveyFormReview
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import SurveyForm from './SurveyForm';
@@ -14,6 +15,7 @@ class SurveyNew extends Component {
         />
       );
     }
+
     return (
       <SurveyForm
         onSurveySubmit={() => this.setState({ showFormReview: true })}
@@ -22,11 +24,14 @@ class SurveyNew extends Component {
   }
 
   render() {
-    return <div>{this.renderContent()}</div>;
+    return (
+      <div>
+        {this.renderContent()}
+      </div>
+    );
   }
 }
 
 export default reduxForm({
-  //clear form values on cancel
   form: 'surveyForm'
 })(SurveyNew);

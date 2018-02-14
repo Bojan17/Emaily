@@ -23,7 +23,7 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-//call exported function with app object
+//call exported route function with app object
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
 require('./routes/surveyRoutes')(app);

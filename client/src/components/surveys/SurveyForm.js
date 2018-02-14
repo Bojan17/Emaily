@@ -1,3 +1,4 @@
+// SurveyForm shows a form for a user to add input
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
@@ -39,22 +40,22 @@ class SurveyForm extends Component {
   }
 }
 
-//check our form and return errors if any
 function validate(values) {
   const errors = {};
+
   errors.recipients = validateEmails(values.recipients || '');
 
   _.each(formFields, ({ name }) => {
     if (!values[name]) {
-      errors[name] = 'This field is required!';
+      errors[name] = 'You must provide a value';
     }
   });
+
   return errors;
 }
 
 export default reduxForm({
   validate,
-  //name values inside form reducer
   form: 'surveyForm',
   destroyOnUnmount: false
 })(SurveyForm);
