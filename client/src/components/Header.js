@@ -9,11 +9,11 @@ class Header extends Component {
       case null:
         return;
       case false:
-        return <li><a href="/auth/google">Login With Google</a></li>;
+        return <li className="auth"><a href="/auth/google">Login With Google</a></li>;
       default:
         return [
-          <li key="1"><Payments /></li>,
-          <li key="3" style={{ margin: '0 10px' }}>
+          <li className="Payment" key="1"><Payments /></li>,
+          <li className="credits" key="3" style={{ margin: '0 10px' }}>
             Credits: {this.props.auth.credits}
           </li>,
           <li key="2"><a href="/api/logout">Logout</a></li>
@@ -31,7 +31,7 @@ class Header extends Component {
           >
             Emaily
           </Link>
-          <ul className="right hide-on-med-and-down">
+          <ul className="right">
             {this.renderContent()}
           </ul>
         </div>
