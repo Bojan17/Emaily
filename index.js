@@ -31,6 +31,7 @@ require('./routes/surveyRoutes')(app);
 if (process.env.NODE_ENV === 'production') {
   //Express serve up assets
   app.use(express.static('client/build'));
+  app.use(express.static('client/public/index.css'));
   //Express serve index.html if doesn't recognize route after checking three previous routes above
   const path = require('path');
   app.get('*', (req, res) => {
